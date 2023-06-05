@@ -1,0 +1,121 @@
+#ifndef __SIMCOM_CAM_COMMON_H__
+#define __SIMCOM_CAM_COMMON_H__
+
+#ifdef SIMCOM_CAMERA_SUPPORT
+//frame size
+enum {
+    FRAMESIZE_96X96,    // 96x96
+    FRAMESIZE_QQVGA,    // 160x120
+    FRAMESIZE_QCIF,     // 176x144
+    FRAMESIZE_HQVGA,    // 240x176
+    FRAMESIZE_240X240,  // 240x240
+    FRAMESIZE_QVGA,     // 320x240
+    FRAMESIZE_CIF,      // 400x296
+    FRAMESIZE_HVGA,     // 480x320
+    FRAMESIZE_VGA,      // 640x480
+    FRAMESIZE_SVGA,     // 800x600
+    FRAMESIZE_XGA,      // 1024x768
+    FRAMESIZE_HD,       // 1280x720
+    FRAMESIZE_SXGA,     // 1280x1024
+    FRAMESIZE_UXGA,     // 1600x1200
+    FRAMESIZE_INVALID
+};
+
+typedef struct {
+    unsigned short cam_width;
+    unsigned short cam_height;
+} framesize_info_t;
+
+//effect setting
+typedef enum {
+    HAL_EFFECT_NONE = -1,
+    HAL_EFFECT_NORMAL=0,
+    HAL_EFFECT_GRAYSCALE,
+    HAL_EFFECT_SEPIA,
+    HAL_EFFECT_SEPIAGREEN,
+    HAL_EFFECT_SEPIABLUE,
+    HAL_EFFECT_COLORINV=5,
+    HAL_EFFECT_GRAYINV,
+    HAL_EFFECT_BLACKBOARD,
+    HAL_EFFECT_WHITEBOARD,
+    HAL_EFFECT_COPPERPLATE,
+    HAL_EFFECT_EMBOSS=10,
+    HAL_EFFECT_BLUECARVING,
+    HAL_EFFECT_CONTRAST,
+    HAL_EFFECT_JEAN,
+    HAL_EFFECT_SKETCH,
+    HAL_EFFECT_OIL=15,
+    HAL_EFFECT_NO_OF_EFFECT=16,
+    HAL_EFFECT_ANTIQUE,
+    HAL_EFFECT_RED,
+    HAL_EFFECT_GREEN,
+    HAL_EFFECT_BLUE=20,
+    HAL_EFFECT_BLACKWHITE,
+    HAL_EFFECT_NEGATIVE,
+
+} CAM_HAL_EFFECT;
+
+//white balance
+typedef enum {
+    HAL_WB_AUTO = 0x0,
+    HAL_WB_DAYLIGHT,
+    HAL_WB_TUNGSTEN,
+    HAL_WB_OFFICE,
+    HAL_WB_CLOUDY,
+    HAL_WB_INCANDESCENT,
+} CAM_HAL_WB;
+
+//contrast
+typedef enum {
+    CAM_CONTRAST_HIGH,
+    CAM_CONTRAST_MEDIUM,
+    CAM_CONTRAST_LOW,
+} CAM_MINI_CONTRAST;
+
+//exposure
+typedef enum {
+    CAM_EV_NEG_4_3,
+    CAM_EV_NEG_3_3,
+    CAM_EV_NEG_2_3,
+    CAM_EV_NEG_1_3,
+    CAM_EV_ZERO,
+    CAM_EV_POS_1_3,
+    CAM_EV_POS_2_3,
+    CAM_EV_POS_3_3,
+    CAM_EV_POS_4_3,
+} CAM_HAL_EXPOSURE;
+
+//saturation
+typedef enum {
+    HAL_SATURATION_n3,
+    HAL_SATURATION_n2,
+    HAL_SATURATION_n1,
+    HAL_SATURATION_mid,
+    HAL_SATURATION_p1,
+    HAL_SATURATION_p2,
+    HAL_SATURATION_p3,
+} CAM_HAL_SATURATION;
+
+//brightness
+typedef enum {
+    HAL_BRIGHTNESS_1 = 1,
+    HAL_BRIGHTNESS_2,
+    HAL_BRIGHTNESS_3,
+    HAL_BRIGHTNESS_4,
+    HAL_BRIGHTNESS_mid,
+    HAL_BRIGHTNESS_6,
+    HAL_BRIGHTNESS_7,
+    HAL_BRIGHTNESS_8,
+    HAL_BRIGHTNESS_9,
+} CAM_HAL_BRIGHTNESS;
+
+//mirror
+typedef enum {
+    HAL_MIRROR_H,
+    HAL_MIRROR_V,
+    HAL_MIRROR_HV,
+    HAL_MIRROR_NORMAL,
+} CAM_HAL_MIRROR;
+#endif
+
+#endif
